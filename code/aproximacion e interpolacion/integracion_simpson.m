@@ -12,20 +12,22 @@ endfunction
 
 function [result] = numeric_integration(y_data, step)
 	
-	result = y_data(1);
-  n = rows(y_data);
+  result = y_data(1);
+  n = length(y_data);
   
   # Suma impares
-  for i = 1 : 2 : n - 1
-    result += 2 * y_data(i);
-  endfor
-  
-  # Suma pares
   for i = 2 : 2 : n - 1
     result += 4 * y_data(i);
   endfor
   
-	result += y_data(i + 1);
+  
+  # Suma pares
+  for i = 3 : 2 : n - 1
+    result += 2 * y_data(i);
+  endfor
+  
+  
+	result += y_data(n);
 
 	result *= step / 3.0;
 
