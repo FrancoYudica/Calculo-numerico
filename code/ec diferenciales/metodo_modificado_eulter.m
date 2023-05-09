@@ -1,4 +1,4 @@
-function metodo_mejorado_euler
+function metodo_modificado_euler
 
   f = @(x, y)(2*y - 2*x-1);
   y0 = 2;
@@ -11,24 +11,19 @@ function metodo_mejorado_euler
     # Pendiente anterior
     l1 = f(x(i-1), y(i-1));
 
-    l2 = f(x(i),y(i-1)+h*l1);
-    lprom = 0.5 * (l1 + l2);
-    y(i) = y(i-1) + h * lprom;
+    # Pendiente en el punto medio
+    lc = f(x(i-1) + 0.5 * h, y(i-1) + 0.5 * h * l1);
+
+    y(i) = y(i-1) + h * lc;
 
   endfor
+
   hold on
 
   figure(1);
   plot(x, y, "o");
 
-  error = [];
-
-  #for i = 1 : 11
-  #  error(i)=exp(2*x(i))+x(i)+1 - y(i);
-  #endfor
-
-  #plot(x, error);
-
+  # Solución exacta
   plot(x, exp(2*x)+x+1)
   hold off
 
