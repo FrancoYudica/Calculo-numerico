@@ -11,11 +11,15 @@ function metodo_runge_kutta
 
   for i = 2: length(x)
 
-    # Pendiente anterior
-    k1 = h * f(x(i-1), y(i-1));
 
-    xg = x(i-1) + h / (2 * w);
-    yg = y(i-1) + k1 / (2 * w);
+    xk = x(i - 1);
+    yk = y(i - 1);
+
+    # Pendiente anterior
+    k1 = h * f(xk, yk);
+
+    xg = xk + h / (2 * w);
+    yg = yk + k1 / (2 * w);
     k2 = h * f(xg, yg);
 
     y(i) = y(i-1) + (1 - w) * k1 + w * k2;

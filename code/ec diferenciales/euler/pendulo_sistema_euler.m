@@ -13,7 +13,7 @@ function pendulo_sistema_euler
   ti = 0.0;  # Tiempo inicial
   tf = 10.0; # Tiempo final
 
-  h = 0.01; # El paso es muy chico, de otro modo nos encontramos que
+  h = 0.001; # El paso es muy chico, de otro modo nos encontramos que
              # el metodo de euler presenta una divergencia
 
   x = ti : h : tf;
@@ -42,8 +42,8 @@ function pendulo_sistema_euler
   hold on
 
   figure(1);
-  plot(x, y(1, :), "o");
-  plot(x, y(2, :), "o");
+  plot(x, y(1, :));
+  plot(x, y(2, :));
 
   hold off
 
