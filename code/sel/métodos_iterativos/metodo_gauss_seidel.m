@@ -44,7 +44,7 @@ function [x, found] = gauss_seidel(A, b)
       # This loop is equivalent to the lower triangular matrix,
       # thats why we can use the new_x. This is the only difference between
       # the original jabobi method and gauss_seidel
-  
+
       for j=1 : i-1
           acc += A(i, j) * new_x(j);
       endfor

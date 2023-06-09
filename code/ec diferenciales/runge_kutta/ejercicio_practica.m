@@ -1,5 +1,3 @@
-# El ejercicio se encuentra en la guia de estudio, página 107 del pdf
-# es un ejercicio de reducción de orden
 
 function ejericicio_practica
 
