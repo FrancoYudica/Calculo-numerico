@@ -2,7 +2,7 @@
 # Es de segundo orden en 'x' y en primer orden en 't'
 # es por eso que podemos usar euler mejorado sin reduccion de orden
 
-function parciales_26_integrador
+function ej_26_parcial_primer_orden
 
   d = 0.5;
   B = d * [-2, 1, 0, 0; 1, -2, 1, 0; 0, 1, -2, 1; 0, 0, 1, -2];
