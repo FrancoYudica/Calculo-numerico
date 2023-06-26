@@ -7,14 +7,14 @@ function reduccion_euler_ordinario
 
     L = 1.0;
     c = 1.0;
-    dt = 0.01;
+    dt = 0.001;
     dx = L / 4;
 
     # Discretizamos en 5 puntos
     x = 0.0 : dx : L;
     t = 0.0 : dt : 1.0;
 
-    l = c * c /  (dx * dx);
+    l = -c * c /  (dx * dx);
     K = [-2, 1, 0; 1, -2, 1; 0, 1, -2];
 
     A = [zeros(3, 3), eye(3); -l * K, zeros(3, 3)];

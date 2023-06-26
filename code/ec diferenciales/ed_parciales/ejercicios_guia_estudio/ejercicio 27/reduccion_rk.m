@@ -14,7 +14,7 @@ function reduccion_rk
     x = 0.0 : dx : L;
     t = 0.0 : dt : 1.0;
 
-    l = c * c /  (dx * dx);
+    l = -c * c /  (dx * dx);
     K = [-2, 1, 0; 1, -2, 1; 0, 1, -2];
 
     A = [zeros(3, 3), eye(3); -l * K, zeros(3, 3)];
